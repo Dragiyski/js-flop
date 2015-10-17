@@ -25,3 +25,14 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+# Webstorm project files
+.idea
+
+# Following files must be build
+# Run the commands:
+#    npm run gen-state
+#    npm run gen-token
+# To generate them
+lib/state.js
+lib/token.js

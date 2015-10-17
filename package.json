@@ -1,0 +1,17 @@
+{
+  "name": "flop",
+  "version": "0.0.1",
+  "description": "~",
+  "main": "index.js",
+  "private": true,
+  "bin": {
+    "flop": "id.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test available\" && exit 1",
+    "gen-state": "node bin/id config/state-list.conf lib/state.js",
+    "gen-token": "node bin/id config/token-list.conf lib/token.js"
+  },
+  "author": "Plamen Dragiyski",
+  "license": "GPL-3.0"
+}
