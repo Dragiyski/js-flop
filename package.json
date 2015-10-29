@@ -13,5 +13,8 @@
     "gen-token": "node bin/id config/token-list.conf lib/token.js"
   },
   "author": "Plamen Dragiyski",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
 }
