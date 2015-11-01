@@ -1,0 +1,84 @@
+<root>
+    <nodes>
+        <node id="Script">
+            <optional>
+                <repeat>
+                    <ref id="Statement"/>
+                </repeat>
+            </optional>
+        </node>
+        <node id="Statement" abstract="true"/>
+        <node id="Block">
+            <character ascii="{"/>
+            <optional>
+                <repeat>
+                    <ref id="Statement"/>
+                </repeat>
+            </optional>
+            <character ascii="}"/>
+        </node>
+        <node id="Statement.Break">
+            <character-sequence ascii="break"/>
+        </node>
+        <node id="Statement.Continue">
+            <character-sequence ascii="continue"/>
+        </node>
+        <node id="Statement.Empty"/>
+        <node id="Statement.IfElse">
+            <character-sequence ascii="if"/>
+            <character ascii="("/>
+            <ref id="Expression"/>
+            <character ascii=")"/>
+            <alternative>
+                <ref id="Statement"/>
+                <ref id="Block"/>
+            </alternative>
+            <optional>
+                <character-sequence ascii="else"/>
+                <alternative>
+                    <ref id="Statement"/>
+                    <ref id="Block"/>
+                </alternative>
+            </optional>
+        </node>
+        <node id="Statement.Switch">
+            <character-sequence ascii="switch"/>
+            <character ascii="("/>
+            <ref id="Expression"/>
+            <character ascii=")"/>
+            <character ascii="{"/>
+            <optional>
+                <repeat>
+                    <alternative>
+                        <ref id="Statement.Switch.Case"/>
+                        <ref id="Statement.Switch.Default"/>
+                    </alternative>
+                </repeat>
+            </optional>
+            <character ascii="}"/>
+        </node>
+        <node id="Statement.Switch.Case">
+            <character-sequence ascii="case"/>
+            <ref id="Expression"/>
+            <character ascii=":"/>
+            <optional>
+                <repeat>
+                    <ref id="Statement"/>
+                </repeat>
+            </optional>
+        </node>
+        <node id="Statement.Switch.Default">
+            <character-sequence ascii="default"/>
+            <character ascii=":"/>
+            <optional>
+                <repeat>
+                    <ref id="Statement"/>
+                </repeat>
+            </optional>
+        </node>
+        <node id="Statement.Throw">
+            <character-sequence ascii="throw"/>
+            <ref id="Expression"/>
+        </node>
+    </nodes>
+</root>
