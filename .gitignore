@@ -36,3 +36,6 @@ node_modules
 # To generate them
 lib/state.js
 lib/token.js
+
+# Netbeans project files
+/nbproject
